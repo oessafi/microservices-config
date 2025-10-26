@@ -1,0 +1,8 @@
+server.port=8082
+spring.application.name=inscription-service
+
+# Configuration spécifique à inscription-service
+spring.datasource.url=jdbc:mysql://localhost:3306/inscription_db
+spring.datasource.username=root
+spring.datasource.password=root
+spring.jpa.hibernate.ddl-auto=update
