@@ -11,6 +11,7 @@ spring:
           uri: lb://USER-SERVICE
           predicates:
             - Path=/users/**
+            - Path=/auth/** 
         - id: inscription-service
           uri: lb://INSCRIPTION-SERVICE
           predicates:
