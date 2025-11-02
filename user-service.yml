@@ -4,4 +4,3 @@ server:
 spring:
   application:
     name: user-service
-jwt.secret-key=a8f5eb2b7a8f0b3a1b9a8f5eb2b7a8f0b3a1b9a8f5eb2b7a8f0b3a1b9a8f5eb2b
