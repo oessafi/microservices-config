@@ -1,18 +1,18 @@
-
-
-spring:
-  application:
-    name: user-service
-    server:
+# Port du serveur
+server:
   port: 8081
 
-# Votre clé secrète
+# Votre clé secrète JWT
 jwt:
   secret-key: a8f5eb2b7a8f0b3a1b9a8f5eb2b7a8f0b3a1b9a8f5eb2b7a8f0b3a1b9a8f5eb2b
 
 debug: true
 
+# Bloc Spring unique
 spring:
+  application:
+    name: user-service
+  
   # Configuration de la base de données
   datasource:
     url: jdbc:postgresql://localhost:5432/db_auth
@@ -28,4 +28,8 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
 
-# Mettez aussi la configuration Eureka ici
+# Configuration Eureka
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
