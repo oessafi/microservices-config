@@ -1,6 +1,31 @@
-server:
-  port: 8081
+
 
 spring:
   application:
     name: user-service
+    server:
+  port: 8081
+
+# Votre clé secrète
+jwt:
+  secret-key: a8f5eb2b7a8f0b3a1b9a8f5eb2b7a8f0b3a1b9a8f5eb2b7a8f0b3a1b9a8f5eb2b
+
+debug: true
+
+spring:
+  # Configuration de la base de données
+  datasource:
+    url: jdbc:postgresql://localhost:5432/db_auth
+    username: postgres
+    password: omar123
+    driver-class-name: org.postgresql.Driver
+  
+  # Configuration JPA
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+# Mettez aussi la configuration Eureka ici
