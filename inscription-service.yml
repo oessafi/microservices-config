@@ -4,3 +4,22 @@ server:
 spring:
   application:
     name: inscription-service
+  
+  # --- Connexion à la base de données PostgreSQL ---
+  datasource:
+    url: jdbc:postgresql://localhost:5432/db_inscriptions
+    username: postgres 
+    password: omar123
+    driver-class-name: org.postgresql.Driver
+  
+  # --- Configuration JPA / Hibernate ---
+  jpa:
+    hibernate:
+      ddl-auto: update # "update" met à jour le schéma au démarrage. Utilisez "validate" en production.
+    show-sql: true # Affiche les requêtes SQL dans la console (utile pour le débogage)
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+
+
+eureka:
+  instance:
+    prefer-ip-address: true
