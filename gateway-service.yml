@@ -33,11 +33,7 @@ spring:
           uri: lb://user-service
           predicates:
             - Path=/users/**, /auth/**
-          filters:
-            - name: CircuitBreaker
-              args:
-                name: userServiceCB
-                fallbackUri: forward:/fallback/user
+          # CircuitBreaker removed
 
         # 2. INSCRIPTION SERVICE
         # Gère les inscriptions, les campagnes et les documents
@@ -52,7 +48,7 @@ spring:
           predicates:
             - Path=/soutenances/**
 
-        # 4. NOTIFICATION SERVICE/
+        # 4. NOTIFICATION SERVICE
         - id: notification-service
           uri: lb://notification-service
           predicates:
