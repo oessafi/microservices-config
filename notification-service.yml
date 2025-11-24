@@ -28,7 +28,7 @@ spring:
     host: smtp.gmail.com
     port: 587
     username: oe03409@gmail.com
-    # Utilisez le mot de passe d'application, pas votre mot de passe Gmail normal
+    # NOTE DE SÉCURITÉ : Il est fortement recommandé d'utiliser des variables d'environnement
     password: zbobxiufphuaozon 
     properties:
       mail:
