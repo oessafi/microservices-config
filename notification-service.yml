@@ -1,0 +1,51 @@
+server:
+  port: 8086
+
+spring:
+  application:
+    name: notification-service
+
+  # Configuration Kafka
+  kafka:
+    bootstrap-servers: localhost:9092
+    
+    # Consumer (Écoute les messages)
+    consumer:
+      group-id: notification-group
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      properties:
+        spring.json.trusted.packages: "*"
+    
+    # Producer (Envoie les messages - pour les tests ou retries)
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+
+  # Configuration Mail (SMTP Gmail)
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: oe03409@gmail.com
+    # Utilisez le mot de passe d'application, pas votre mot de passe Gmail normal
+    password: zbobxiufphuaozon 
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+          connectiontimeout: 5000
+          timeout: 5000
+          writetimeout: 5000
+
+# Configuration Eureka Client
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+    fetch-registry: true
+    register-with-eureka: true
+  instance:
+    prefer-ip-address: true
